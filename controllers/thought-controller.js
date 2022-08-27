@@ -55,7 +55,7 @@ const ThoughtController = {
 
     //UPDATE THIS THOUGHT
     updateThought ({ params, body }, res) {
-        Thought.findOneAndUpdate({ _id: parmas.id }, body, { new: true })
+        Thought.findOneAndUpdate({ _id: params.id }, body, { new: true })
             .then((dbThoughtData) => {
                 if(!dbThoughtData) {
                     res.status(404).json({ message: 'thought not found'});
